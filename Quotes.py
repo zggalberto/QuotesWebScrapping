@@ -22,10 +22,9 @@ for x in range (int(n)):
     for quote in quotes:
         message=quote.find(text=True,recursive=False)
         author=quote.find("div",class_="quote_author")
-        #print("Quote="+message.strip())
-        if not author :
-            author="Anónimo"
-            #print("Author="+author.text.strip())
+        message=message.strip()
+        if not author :author="Anónimo"
+        else: author=author.text.strip()
         tupla=message,author
         pagina.append(tupla)
         print(tupla)
